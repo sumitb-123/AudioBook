@@ -1,6 +1,7 @@
-import pyttsx3
-import PyPDF2
 import sys
+import math
+import PyPDF2
+import pyttsx3
 
 class AudioBook:
     def __inti__(self):
@@ -46,9 +47,9 @@ if __name__ == "__main__":
             end_page   = int(sys.argv[3])
             if end_page < 0:
                 print("Default Ending point set")
-                end_page = 0
+                end_page = math.inf
         except:
             print("Exception: Default Ending point set")
-            end_page   = 0
+            end_page   = math.inf
 
     b.read_pdf(sys.argv[1], start_page, end_page)
